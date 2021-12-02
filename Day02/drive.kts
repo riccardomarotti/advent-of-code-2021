@@ -1,5 +1,5 @@
 val lines = java.io.File("input").readLines()
-fun getValue(it: String) = it.split(" ")[1].toInt()
+fun getValue(command: String) = command.split(" ")[1].toInt()
 
 val horizontal = lines.filter { it.startsWith("forward") }.map { getValue(it) }.reduce { acc, i -> acc+i }
 var depth = lines.filter { it.startsWith("down") }.map { getValue(it) }.reduce { acc, i -> acc+i }

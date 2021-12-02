@@ -1,12 +1,3 @@
-var previousLine = Int.MAX_VALUE.toString()
-var count = 0
-
-java.io.File("input").forEachLine {
-    when {
-        it.toInt() > previousLine.toInt() -> count += 1
-    }
-
-    previousLine = it
-}
+val count = java.io.File("input").readLines().map { it.toInt() }.zipWithNext().count { (a, b) -> a < b }
 
 println(count)
